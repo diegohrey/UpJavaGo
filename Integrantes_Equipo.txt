@@ -1,4 +1,4 @@
-Integrantes Equipo: UpJavaGo!
+DIntegrantes Equipo: UpJavaGo!
 
 -------------------------------------
 
@@ -9,3 +9,8 @@ Celular : 3043730066
 Rol : Desarrollador
 
 -------------------------------------
+Documento: 91297633
+Nombre: Diego Hernando Rey Rodriguez
+Correo: diegohrey@gmail.com
+Celular: 3054037430
+Rol:Scrum Master
