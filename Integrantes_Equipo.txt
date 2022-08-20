@@ -23,3 +23,10 @@ Celular : 3224732429
 Rol : Desarrollador 
 
 --------------------------------------
+Documento: 1113679586
+Nombre: Juan Camilo Cabrera Gil
+Correo: camilocabrerag14@gmail.com
+Celular: 3202791528
+Rol: Desarrollador
+
+--------------------------------------
