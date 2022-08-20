@@ -14,3 +14,12 @@ Nombre: Diego Hernando Rey Rodriguez
 Correo: diegohrey@gmail.com
 Celular: 3054037430
 Rol:Scrum Master
+ 
+-------------------------------------
+Documento: 1027522806 
+Nombre : Jenny Valentina Gonzalez Aguilar 
+Correo : jennygonzalez11@outlook.com
+Celular : 3224732429
+Rol : Desarrollador 
+
+--------------------------------------
