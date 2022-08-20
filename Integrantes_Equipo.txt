@@ -1,7 +1,6 @@
 DIntegrantes Equipo: UpJavaGo!
 
 -------------------------------------
-
 Documento : 1005154681
 Nombre : Lian Alejandro Rincón Amaya
 Correo : lkuronara@gmail.com y georincon@gmail.com
@@ -30,3 +29,5 @@ Celular: 3202791528
 Rol: Desarrollador
 
 --------------------------------------
+
+20-08-2022
