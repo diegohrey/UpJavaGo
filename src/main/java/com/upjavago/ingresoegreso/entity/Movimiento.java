@@ -1,22 +1,22 @@
 package com.upjavago.ingresoegreso.entity;
 
-public class MovimientoDinero {
+public class Movimiento {
 
     private long idMovimiento;
     private double monto;
-    private String tipoMovimiento;
+    private TipoMovimiento tipoMovimiento;
     private String concepto;
-    private Empleado empleado;
+    private Usuario usuario;
 
-    public MovimientoDinero() {
+    public Movimiento() {
     }
 
-    public MovimientoDinero(long idMovimiento, double monto, String tipoMovimiento, String concepto, Empleado empleado) {
+    public Movimiento(long idMovimiento, double monto, TipoMovimiento tipoMovimiento, String concepto, Usuario usuario) {
         this.idMovimiento = idMovimiento;
         this.monto = monto;
         this.tipoMovimiento = tipoMovimiento;
         this.concepto = concepto;
-        this.empleado = empleado;
+        this.usuario = usuario;
     }
 
     public long getIdMovimiento() {
@@ -35,11 +35,11 @@ public class MovimientoDinero {
         this.monto = monto;
     }
 
-    public String getTipoMovimiento() {
+    public TipoMovimiento getTipoMovimiento() {
         return tipoMovimiento;
     }
 
-    public void setTipoMovimiento(String tipoMovimiento) {
+    public void setTipoMovimiento(TipoMovimiento tipoMovimiento) {
         this.tipoMovimiento = tipoMovimiento;
     }
 
@@ -51,12 +51,12 @@ public class MovimientoDinero {
         this.concepto = concepto;
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class MovimientoDinero {
                 ", monto=" + monto +
                 ", tipoMovimiento='" + tipoMovimiento + '\'' +
                 ", concepto='" + concepto + '\'' +
-                ", empleado=" + empleado +
+                ", empleado=" + usuario +
                 '}';
     }
 }
