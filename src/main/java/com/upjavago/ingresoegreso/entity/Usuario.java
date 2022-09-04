@@ -1,30 +1,30 @@
 package com.upjavago.ingresoegreso.entity;
 
-public class Empleado {
+public class Usuario {
 
-    private long idEmpleado;
+    private long idUsuario;
     private String nombre;
     private String correo;
     private Empresa empresa;
-    private String rol;
+    private TipoRol rol;
 
-    public Empleado() {
+    public Usuario() {
     }
 
-    public Empleado(long idEmpleado, String nombre, String correo, Empresa empresa, String rol) {
-        this.idEmpleado = idEmpleado;
+    public Usuario(long idUsuario, String nombre, String correo, Empresa empresa, TipoRol rol) {
+        this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.correo = correo;
         this.empresa = empresa;
         this.rol = rol;
     }
 
-    public long getIdEmpleado() {
-        return idEmpleado;
+    public long getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setIdEmpleado(long idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public void setIdUsuario(long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombre() {
@@ -51,18 +51,18 @@ public class Empleado {
         this.empresa = empresa;
     }
 
-    public String getRol() {
+    public TipoRol getRol() {
         return rol;
     }
 
-    public void setRol(String rol) {
+    public void setRol(TipoRol rol) {
         this.rol = rol;
     }
 
     @Override
     public String toString() {
         return "Empleado{" +
-                "idEmpleado=" + idEmpleado +
+                "idUsuario=" + idUsuario +
                 ", nombre='" + nombre + '\'' +
                 ", correo='" + correo + '\'' +
                 ", empresa=" + empresa +
