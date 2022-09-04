@@ -65,22 +65,33 @@ public class UsuarioService implements IUsuarioService{
 
         usuarios.add(usuario1);
         usuarios.add(usuario2);
-        return null;
+        return usuarios;
     }
 
     @Override
     public Usuario createUsuario(Usuario usuario) {
-
-        return null;
+        Usuario newUsuario = new Usuario();
+        newUsuario.setIdUsuario(usuario.getIdUsuario());
+        newUsuario.setNombre(usuario.getNombre());
+        newUsuario.setCorreo(usuario.getCorreo());
+        newUsuario.setEmpresa(usuario.getEmpresa());
+        newUsuario.setRol(usuario.getRol());
+        return newUsuario;
     }
 
     @Override
     public Usuario updateUsuario(int id, Usuario usuario) {
-        return null;
+        Usuario actualizarUsuario = findById(id);
+        actualizarUsuario.setNombre(usuario.getNombre());
+        actualizarUsuario.setCorreo(usuario.getCorreo());
+        actualizarUsuario.setEmpresa(usuario.getEmpresa());
+        actualizarUsuario.setRol(usuario.getRol());
+        return actualizarUsuario;
     }
 
     @Override
     public void deleteUsuario(int id) {
-
+        Usuario delUsuario = findById(id);
+        System.out.println("se elimino el usuario: " + delUsuario.toString());
     }
 }
