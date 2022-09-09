@@ -1,83 +1,141 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "ff3f3ad3-6505-4b51-b341-f73974b91934",
 		"name": "Proyecto_IngresoEgreso",
-		"_postman_id": "5e80fae7-9e19-c842-c49f-901ffd0dd7a6",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Empresa",
-			"description": "",
 			"item": [
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/empresa/1",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/empresa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"empresa",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/empresa",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/empresa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"empresa"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
 					"request": {
-						"url": "http://localhost:8080/api/empresa",
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idEmpresa\": 3,\r\n    \"nombre\": \"Pony_Malta\",\r\n    \"direccion\": \"Autopista chigorodp km 24\",\r\n    \"telefono\": \"6078569854\",\r\n    \"nit\": \"800.320.478-1\"\r\n}"
+							"raw": "{\r\n    \"idEmpresa\": 3,\r\n    \"nombre\": \"Pony_Malta\",\r\n    \"direccion\": \"Autopista chigorodp km 24\",\r\n    \"telefono\": \"6078569854\",\r\n    \"nit\": \"800.320.478-1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/empresa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"empresa"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
 					"request": {
-						"url": "http://localhost:8080/api/empresa/1",
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Pony_Malta\",\r\n    \"direccion\": \"Autopista chigorodp km 24\",\r\n    \"telefono\": \"6078569854\",\r\n    \"nit\": \"800.320.478-1\"\r\n}"
+							"raw": "{\r\n    \"nombre\": \"Pony_Malta\",\r\n    \"direccion\": \"Autopista chigorodo km 24\",\r\n    \"telefono\": \"6078569854\",\r\n    \"nit\": \"800.320.478-1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/empresa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"empresa",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/empresa/1",
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/empresa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"empresa",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
@@ -85,75 +143,129 @@
 		},
 		{
 			"name": "Usuario",
-			"description": "",
 			"item": [
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/usuario/1",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/usuario",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/usuario",
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idUsuario\": 3,\r\n    \"nombre\": \"Camilo Cabrera\",\r\n    \"correo\": \"camilo@micorreo.com\",\r\n    \"empresa\": {\r\n        \"idEmpresa\": 1,\r\n        \"nombre\": \"Coca-Cola\",\r\n        \"direccion\": \"Autopista giron km 4\",\r\n        \"telefono\": \"6076559595\",\r\n        \"nit\": \"800.526.236-1\"\r\n    },\r\n    \"rol\": \"operativo\"\r\n}"
+							"raw": "{\r\n    \"idUsuario\": 3,\r\n    \"nombre\": \"Camilo Cabrera\",\r\n    \"correo\": \"camilo@micorreo.com\",\r\n    \"empresa\": {\r\n        \"idEmpresa\": 1,\r\n        \"nombre\": \"Coca-Cola\",\r\n        \"direccion\": \"Autopista giron km 4\",\r\n        \"telefono\": \"6076559595\",\r\n        \"nit\": \"800.526.236-1\"\r\n    },\r\n    \"rol\": \"operativo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/usuario/1",
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Lian Rincon\",\r\n    \"correo\": \"lian@micorreo.com\",\r\n    \"empresa\": {\r\n        \"idEmpresa\": 2,\r\n        \"nombre\": \"Pesip-Cola\",\r\n        \"direccion\": \"Autopista AguadeDios km 5\",\r\n        \"telefono\": \"6077550023\",\r\n        \"nit\": \"800.556.111-3\"\r\n    },\r\n    \"rol\": \"operativo\"\r\n}"
+							"raw": "{\r\n    \"nombre\": \"Lian Rincon\",\r\n    \"correo\": \"lian@micorreo.com\",\r\n    \"empresa\": {\r\n        \"idEmpresa\": 2,\r\n        \"nombre\": \"Pesip-Cola\",\r\n        \"direccion\": \"Autopista AguadeDios km 5\",\r\n        \"telefono\": \"6077550023\",\r\n        \"nit\": \"800.556.111-3\"\r\n    },\r\n    \"rol\": \"operativo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/usuario/1",
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
@@ -161,84 +273,125 @@
 		},
 		{
 			"name": "Movimiento",
-			"description": "",
 			"item": [
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/movimiento/1",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/movimiento/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movimiento",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/movimiento",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/movimiento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movimiento"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/movimiento",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"idMovimiento\": 3,\n    \"monto\": 407700.67,\n    \"tipoMovimiento\": \"Egreso\",\n    \"concepto\": \"Pago material didactico\",\n    \"usuario\": {\n        \"idUsuario\": 1,\n        \"nombre\": \"Lian Rincon\",\n        \"correo\": \"lian@micorreo.com\",\n        \"empresa\": {\n            \"idEmpresa\": 1,\n            \"nombre\": \"Coca-Cola\",\n            \"direccion\": \"Autopista giron km 4\",\n            \"telefono\": \"6076559595\",\n            \"nit\": \"800.526.236-1\"\n        },\n        \"rol\": \"administrador\"\n    }\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/movimiento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movimiento"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/movimiento/1",
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"monto\": 234000.45,\n    \"tipoMovimiento\": \"Egreso\",\n    \"concepto\": \"Pago horas extras\",\n    \"usuario\": {\n        \"idUsuario\": 1,\n        \"nombre\": \"Lian Rincon\",\n        \"correo\": \"lian@micorreo.com\",\n        \"empresa\": {\n            \"idEmpresa\": 1,\n            \"nombre\": \"Coca-Cola\",\n            \"direccion\": \"Autopista giron km 4\",\n            \"telefono\": \"6076559595\",\n            \"nit\": \"800.526.236-1\"\n        },\n        \"rol\": \"administrador\"\n    }\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/movimiento/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movimiento",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "New Request",
 					"request": {
-						"url": "http://localhost:8080/api/movimiento/1",
 						"method": "DELETE",
 						"header": [],
-						"body": {},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/movimiento/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movimiento",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}

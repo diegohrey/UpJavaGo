@@ -29,7 +29,7 @@ public class EmpresaController {
         return empresaService.createEmpresa(empresa);
     }
 
-    @PutMapping("/empresa/{id}")
+    @PatchMapping("/empresa/{id}")
     public Empresa actualizarEmpresa(@PathVariable int id, @RequestBody Empresa empresa){
         return empresaService.updateEmpresa(id, empresa);
     }

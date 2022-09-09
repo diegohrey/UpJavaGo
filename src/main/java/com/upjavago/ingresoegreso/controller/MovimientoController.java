@@ -29,7 +29,7 @@ public class MovimientoController {
         return movimientoService.createMovimiento(movimiento);
     }
 
-    @PutMapping("/movimiento/{id}")
+    @PatchMapping("/movimiento/{id}")
     public Movimiento actualizarMovimiento(@PathVariable int id, @RequestBody Movimiento movimiento){
         return movimientoService.updateMovimiento(id, movimiento);
     }
