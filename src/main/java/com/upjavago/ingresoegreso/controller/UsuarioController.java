@@ -29,7 +29,7 @@ public class UsuarioController {
         return usuarioService.createUsuario(usuario);
     }
 
-    @PutMapping("/usuario/{id}")
+    @PatchMapping("/usuario/{id}")
     public Usuario actualizarUsuario(@PathVariable int id, @RequestBody Usuario usuario){
         return usuarioService.updateUsuario(id, usuario);
     }
