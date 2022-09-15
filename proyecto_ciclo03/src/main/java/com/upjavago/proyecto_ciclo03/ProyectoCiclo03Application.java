@@ -1,13 +1,13 @@
-package co.edu.ude.upjavago.thymeleaf;
+package com.upjavago.proyecto_ciclo03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ThymeleafApplication {
+public class ProyectoCiclo03Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ThymeleafApplication.class, args);
+		SpringApplication.run(ProyectoCiclo03Application.class, args);
 	}
 
 }

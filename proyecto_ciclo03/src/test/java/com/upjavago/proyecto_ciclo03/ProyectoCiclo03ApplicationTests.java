@@ -1,10 +1,10 @@
-package co.edu.ude.upjavago.thymeleaf;
+package com.upjavago.proyecto_ciclo03;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ThymeleafApplicationTests {
+class ProyectoCiclo03ApplicationTests {
 
 	@Test
 	void contextLoads() {
