@@ -8,11 +8,11 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>co.edu.ude.upjavago</groupId>
-	<artifactId>thymeleaf</artifactId>
+	<groupId>com.upjavago</groupId>
+	<artifactId>proyecto_ciclo03</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>thymeleaf</name>
-	<description>Proyecto Final Ciclo4</description>
+	<name>proyecto_ciclo03</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
