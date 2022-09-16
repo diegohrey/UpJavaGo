@@ -1,7 +1,16 @@
 package com.upjavago.proyecto_ciclo03.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "movimientos")
 public class Movimiento {
@@ -14,9 +23,12 @@ public class Movimiento {
     @Column(name = "monto", nullable = false)
     private double monto;
 
-    //private TipoMovimiento tipoMovimiento;
+    @Column(name = "tipo_movimiento", nullable = false)
+    private TipoMovimiento tipoMovimiento;
 
     private String concepto;
 
-    //private Usuario usuario;
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
 }

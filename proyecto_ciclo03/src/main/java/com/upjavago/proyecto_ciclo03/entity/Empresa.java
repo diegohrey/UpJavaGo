@@ -1,7 +1,12 @@
 package com.upjavago.proyecto_ciclo03.entity;
 
+import lombok.*;
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "empresas")
 public class Empresa {
@@ -20,5 +25,6 @@ public class Empresa {
 
     @Column(name = "nit", nullable = false)
     private String nit;
+
 
 }
