@@ -34,8 +34,15 @@ public class EmpresaServiceImpl implements IEmpresaService{
 
     @Override
     public Empresa actualizarEmpresa(Long id, Empresa empresa) {
-        Empresa actualEmpresa = empresaRepository.save(empresa);
-        return actualEmpresa;
+        Empresa empresaDB = buscarEmpresaPorId(id);
+        if (null == empresaDB) {
+            return null;
+        }
+        empresaDB.setNombre(empresa.getNombre());
+        empresaDB.setDireccion(empresa.getDireccion());
+        empresaDB.setTelefono(empresa.getTelefono());
+        empresaDB.setNit(empresa.getNit());
+        return empresaRepository.save(empresaDB);
     }
 
     @Override
