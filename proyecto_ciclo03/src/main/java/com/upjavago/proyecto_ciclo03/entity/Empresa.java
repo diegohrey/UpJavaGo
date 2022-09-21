@@ -26,5 +26,7 @@ public class Empresa {
     @Column(name = "nit", nullable = false)
     private String nit;
 
+    @Column(name = "estado")
+    private boolean estado;
 
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de empresas</title>
+</head>
+<body>
+<header th:replace="layout/plantilla :: header"></header>
+<a th:href="@{/}">Home</a>
+<br>
+<a th:href="@{/empresas/crear}">Nueva empresa</a>
+<br>
+<table border="1">
+    <tr>
+        <th>Nombre</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>NIT</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+    <tr th:each="empresa : ${empresas}" th:if="${empresa.estado}">
+        <td th:text="${empresa.nombre}"></td>
+        <td th:text="${empresa.direccion}"></td>
+        <td th:text="${empresa.telefono}"></td>
+        <td th:text="${empresa.nit}"></td>
+        <td><a th:href="@{/empresas/editar/} + ${empresa.idEmpresa}" th:text="Editar"></a></td>
+        <td><a th:href="@{/empresas/eliminar/} + ${empresa.idEmpresa}" th:text="Eliminar"></a></td>
+    </tr>
+</table>
+</body>
+</html>
