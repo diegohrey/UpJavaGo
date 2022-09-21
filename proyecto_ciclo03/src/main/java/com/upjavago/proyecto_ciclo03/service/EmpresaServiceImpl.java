@@ -28,8 +28,7 @@ public class EmpresaServiceImpl implements IEmpresaService{
 
     @Override
     public Empresa crearEmpresa(Empresa empresa) {
-        Empresa newEmpresa = empresaRepository.save(empresa);
-        return newEmpresa;
+        return empresaRepository.save(empresa);
     }
 
     @Override

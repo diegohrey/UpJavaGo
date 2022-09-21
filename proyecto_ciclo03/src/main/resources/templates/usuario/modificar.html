@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos del usuario</title>
+</head>
+<body>
+<header th:replace="layout/plantilla :: header"></header>
+<h2>Datos de usuario</h2>
+<form id="customer-form" th:action="@{/usuarios/guardar}" method="post" th:object="${usuario}">
+    <input type="hidden" name="idUsuario" th:field="*{idUsuario}">
+    <br>
+    <label for="nombre">Nombre </label>
+    <input type="text" name="nombre" th:field="*{nombre}"/>
+    <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error nombre</span>
+    <br>
+    <label for="apellido">Apellido </label>
+    <input type="text" name="apellido" th:field="*{apellido}"/>
+    <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Error apellido</span>
+    <br>
+    <label for="correo">Correo </label>
+    <input type="email" name="correo" th:field="*{correo}"/>
+    <span th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}">Error correo</span>
+    <br>
+    <label for="clave">Password </label>
+    <input type="text" name="clave" th:field="*{clave}"/>
+    <span th:if="${#fields.hasErrors('clave')}" th:errors="*{clave}">Error clave</span>
+    <br>
+    <label for="empresa">Empresa </label>
+    <select th:field="*{empresa.idEmpresa}" name="empresa">
+        <option  value="0" selected>Seleccione la Empresa</option>
+        <option th:each="empresa : ${empresas}"
+                th:value="${empresa.idEmpresa}"
+                th:text="${empresa.nombre}">
+        </option>
+    </select>
+    <span th:if="${#fields.hasErrors('empresa')}" th:errors="*{empresa}">Error empresa</span>
+    <br>
+    <label for="rol">Tipo Rol</label>
+    <select th:field="*{rol}" name="rol">
+        <option  value="" selected>Seleccione el tipo de rol</option>
+        <option th:each="rol : ${T(com.upjavago.proyecto_ciclo03.entity.TipoRol).values()}"
+                th:value="${rol}"
+                th:text="${rol}">
+        </option>
+    </select>
+    <span th:if="${#fields.hasErrors('rol')}" th:errors="*{rol}">Error tipo rol</span>
+    <br>
+    <input type="submit" name="guardar" value="Guardar">
+</form>
+
+</body>
+</html>
