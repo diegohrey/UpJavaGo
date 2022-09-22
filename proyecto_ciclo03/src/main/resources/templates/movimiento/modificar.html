@@ -3,42 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Datos del movimiento</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
 </head>
 <body>
-<header th:replace="layout/plantilla :: header"></header>
-<h2>Datos del movimiento</h2>
-<form id="customer-form" th:action="@{/movimientos/guardar}" method="post" th:object="${movimiento}">
-    <input type="hidden" name="idMovimiento" th:field="*{idMovimiento}">
-    <br>
-    <label for="monto">Monto </label>
-    <input type="text" name="monto" th:field="*{monto}"/>
-    <span th:if="${#fields.hasErrors('monto')}" th:errors="*{monto}">Error monto</span>
-    <br>
-    <label for="tipoMovimiento">Tipo Movimiento </label>
-    <select th:field="*{tipoMovimiento}" name="tipoMovimiento">
-        <option  value="" selected>Seleccione el tipo Movimiento</option>
-        <option th:each="tipoMovimiento : ${T(com.upjavago.proyecto_ciclo03.entity.TipoMovimiento).values()}"
-                th:value="${tipoMovimiento}"
-                th:text="${tipoMovimiento}">
-        </option>
-    </select>
-    <span th:if="${#fields.hasErrors('tipoMovimiento')}" th:errors="*{tipoMovimiento}">Error tipo Movimiento</span>
-    <br>
-    <label for="concepto">Concepto </label>
-    <input type="text" name="concepto" th:field="*{concepto}"/>
-    <span th:if="${#fields.hasErrors('concepto')}" th:errors="*{concepto}">Error concepto</span>
-    <br>
-    <label for="usuario">Usuario </label>
-    <select th:field="*{usuario.idUsuario}" name="usuario">
-        <option  value="0" selected>Seleccione usuario</option>
-        <option th:each="usuario : ${usuarios}"
-                th:value="${usuario.idUsuario}"
-                th:text="${usuario.nombre}">
-        </option>
-    </select>
-    <br>
-    <input type="submit" name="guardar" value="Guardar">
-</form>
+    <header th:replace="layout/plantilla :: header"></header>
+    <section th:replace="layout/plantilla :: mainIndex"></section>
+    <div class="container">
+        <h2>Datos del movimiento</h2>
+        <form id="customer-form" th:action="@{/movimientos/guardar}" method="post" th:object="${movimiento}">
+            <input type="hidden" name="idMovimiento" th:field="*{idMovimiento}">
+            <br>
+            <label for="monto">Monto </label>
+            <input type="text" name="monto" th:field="*{monto}"/>
+            <span th:if="${#fields.hasErrors('monto')}" th:errors="*{monto}">Error monto</span>
+            <br>
+            <label for="tipoMovimiento">Tipo Movimiento </label>
+            <select th:field="*{tipoMovimiento}" name="tipoMovimiento">
+                <option  value="" selected>Seleccione el tipo Movimiento</option>
+                <option th:each="tipoMovimiento : ${T(com.upjavago.proyecto_ciclo03.entity.TipoMovimiento).values()}"
+                        th:value="${tipoMovimiento}"
+                        th:text="${tipoMovimiento}">
+                </option>
+            </select>
+            <span th:if="${#fields.hasErrors('tipoMovimiento')}" th:errors="*{tipoMovimiento}">Error tipo Movimiento</span>
+            <br>
+            <label for="concepto">Concepto </label>
+            <input type="text" name="concepto" th:field="*{concepto}"/>
+            <span th:if="${#fields.hasErrors('concepto')}" th:errors="*{concepto}">Error concepto</span>
+            <br>
+            <label for="usuario">Usuario </label>
+            <select th:field="*{usuario.idUsuario}" name="usuario">
+                <option  value="0" selected>Seleccione usuario</option>
+                <option th:each="usuario : ${usuarios}"
+                        th:value="${usuario.idUsuario}"
+                        th:text="${usuario.nombre}">
+                </option>
+            </select>
+            <br>
+            <input type="submit" name="guardar" value="Guardar">
+        </form>
+    </div>
 
+    <footer th:replace="layout/plantilla :: footer"></footer>
+    <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

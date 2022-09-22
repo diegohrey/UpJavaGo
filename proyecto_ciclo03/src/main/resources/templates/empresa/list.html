@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de empresas</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
 </head>
 <body>
-<header th:replace="layout/plantilla :: header"></header>
-<a th:href="@{/}">Home</a>
-<br>
-<a th:href="@{/empresas/crear}">Nueva empresa</a>
-<br>
-<table border="1">
-    <tr>
-        <th>Nombre</th>
-        <th>Direccion</th>
-        <th>Telefono</th>
-        <th>NIT</th>
-        <th>Editar</th>
-        <th>Eliminar</th>
-    </tr>
-    <tr th:each="empresa : ${empresas}" th:if="${empresa.estado}">
-        <td th:text="${empresa.nombre}"></td>
-        <td th:text="${empresa.direccion}"></td>
-        <td th:text="${empresa.telefono}"></td>
-        <td th:text="${empresa.nit}"></td>
-        <td><a th:href="@{/empresas/editar/} + ${empresa.idEmpresa}" th:text="Editar"></a></td>
-        <td><a th:href="@{/empresas/eliminar/} + ${empresa.idEmpresa}" th:text="Eliminar"></a></td>
-    </tr>
-</table>
+    <header th:replace="layout/plantilla :: header"></header>
+    <section th:replace="layout/plantilla :: mainIndex"></section>
+    <div class="container">
+        <a th:href="@{/}">Home</a>
+        <br>
+        <a th:href="@{/empresas/crear}">Nueva empresa</a>
+        <br>
+        <table border="1">
+            <tr>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>NIT</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            <tr th:each="empresa : ${empresas}" th:if="${empresa.estado}">
+                <td th:text="${empresa.nombre}"></td>
+                <td th:text="${empresa.direccion}"></td>
+                <td th:text="${empresa.telefono}"></td>
+                <td th:text="${empresa.nit}"></td>
+                <td><a th:href="@{/empresas/editar/} + ${empresa.idEmpresa}" th:text="Editar"></a></td>
+                <td><a th:href="@{/empresas/eliminar/} + ${empresa.idEmpresa}" th:text="Eliminar"></a></td>
+            </tr>
+        </table>
+    </div>
+
+    <footer th:replace="layout/plantilla :: footer"></footer>
+    <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
 </body>
 </html>
