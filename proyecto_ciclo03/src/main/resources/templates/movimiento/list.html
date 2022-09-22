@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de movimientos</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
 </head>
 <body>
-<header th:replace="layout/plantilla :: header"></header>
-<a th:href="@{/}">Home</a>
-<br>
-<a th:href="@{/movimientos/crear}">Nuevo Movimiento</a>
-<br>
-<table border="1">
-    <tr>
-        <th>Monto</th>
-        <th>Concepto</th>
-        <th>Editar</th>
-        <th>Eliminar</th>
-    </tr>
-    <tr th:each="movimiento : ${movimientos}" th:if="${movimiento.estado}">
-        <td th:text="${movimiento.monto}"></td>
-        <td th:text="${movimiento.concepto}"></td>
-        <td><a th:href="@{/movimientos/editar/} + ${movimiento.idMovimiento}" th:text="Editar"></a></td>
-        <td><a th:href="@{/movimientos/eliminar/} + ${movimiento.idMovimiento}" th:text="Eliminar"></a></td>
-    </tr>
-</table>
+    <header th:replace="layout/plantilla :: header"></header>
+    <section th:replace="layout/plantilla :: mainIndex"></section>
+    <div class="container">
+        <a th:href="@{/}">Home</a>
+        <br>
+        <a th:href="@{/movimientos/crear}">Nuevo Movimiento</a>
+        <br>
+        <table border="1">
+            <tr>
+                <th>Monto</th>
+                <th>Concepto</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            <tr th:each="movimiento : ${movimientos}" th:if="${movimiento.estado}">
+                <td th:text="${movimiento.monto}"></td>
+                <td th:text="${movimiento.concepto}"></td>
+                <td><a th:href="@{/movimientos/editar/} + ${movimiento.idMovimiento}" th:text="Editar"></a></td>
+                <td><a th:href="@{/movimientos/eliminar/} + ${movimiento.idMovimiento}" th:text="Eliminar"></a></td>
+            </tr>
+        </table>
+    </div>
+
+    <footer th:replace="layout/plantilla :: footer"></footer>
+    <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
 </body>
 </html>
