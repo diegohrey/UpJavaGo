@@ -22,11 +22,17 @@ public class Usuario {
     @Column(name = "id_usuario")
     private long idUsuario;
 
+    @javax.validation.constraints.NotEmpty
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
+    @javax.validation.constraints.NotEmpty
     @Column(name = "apellido", nullable = false)
     private String apellido;
+
+    @javax.validation.constraints.NotEmpty
+    @Column(name = "cedula", unique = true)
+    private String cedula;
 
     @Pattern(regexp = "[a-zA-Z0-9!#$%&'*_+-]([\\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\\/()=?¿!.,:;]|\\d)+[a-zA-Z0-9][\\.][a-zA-Z]{2,4}([\\.][a-zA-Z]{2})?" ,message = "Debe ser un correo electrónico válido")
     @Column(name = "correo", nullable = false)
@@ -36,10 +42,12 @@ public class Usuario {
     @Column(name = "clave", nullable = false)
     private String clave;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "id_empresa")
     private Empresa empresa;
 
+    @NotNull
     @Column(name = "rol", nullable = false)
     private TipoRol rol;
 

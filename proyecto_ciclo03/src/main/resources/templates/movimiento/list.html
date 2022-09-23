@@ -5,30 +5,69 @@
     <title>Lista de movimientos</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
     <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+    <link rel="stylesheet" th:href="@{/css/css-footer.css}">
 </head>
 <body>
+
     <header th:replace="layout/plantilla :: header"></header>
     <section th:replace="layout/plantilla :: mainIndex"></section>
-    <div class="container">
-        <a th:href="@{/}">Home</a>
-        <br>
-        <a th:href="@{/movimientos/crear}">Nuevo Movimiento</a>
-        <br>
-        <table border="1">
-            <tr>
-                <th>Monto</th>
-                <th>Concepto</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
-            </tr>
-            <tr th:each="movimiento : ${movimientos}" th:if="${movimiento.estado}">
-                <td th:text="${movimiento.monto}"></td>
-                <td th:text="${movimiento.concepto}"></td>
-                <td><a th:href="@{/movimientos/editar/} + ${movimiento.idMovimiento}" th:text="Editar"></a></td>
-                <td><a th:href="@{/movimientos/eliminar/} + ${movimiento.idMovimiento}" th:text="Eliminar"></a></td>
-            </tr>
-        </table>
-    </div>
+
+    <section>
+        <div class="container">
+            <div class="card">
+                <h4 class="card-title">Lista de movimientos</h4>
+                <div class="card-body">
+                    <div th:if="${movimientos != null and !movimientos.empty}">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Monto</th>
+                                    <th scope="col">Tipo de Movimiento</th>
+                                    <th scope="col">Concepto</th>
+                                    <th scope="col">Usuario</th>
+                                    <th scope="col">Editar</th>
+                                    <th scope="col">Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="movimiento, contador : ${movimientos}" th:if="${movimiento.estado}">
+                                    <td th:text="${contador.count}"></td>
+                                    <td th:text="${movimiento.monto}"></td>
+                                    <td th:text="${movimiento.tipoMovimiento}"></td>
+                                    <td th:text="${movimiento.concepto}"></td>
+                                    <td th:text="${movimiento.usuario.nombre}"></td>
+                                    <td><a th:href="@{/movimientos/editar/} + ${movimiento.idMovimiento}" class="btn btn-primary">
+                                        <i class="fa fa-edit"></i>
+                                    </a></td>
+                                    <td><a th:href="@{/movimientos/eliminar/} + ${movimiento.idMovimiento}" class="btn btn-secondary">
+                                        <i class="fa fa-remove"></i>
+                                    </a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div th:if="${movimientos == null or movimientos.empty}">
+                        <span>No hay elementos en la lista</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 m-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a th:href="@{/movimientos/crear}" class="btn btn-primary btn-block">
+                        <i class="fas fa-plus"></i>
+                        <span>Agregar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer th:replace="layout/plantilla :: footer"></footer>
     <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
