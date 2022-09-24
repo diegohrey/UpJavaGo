@@ -1,5 +1,7 @@
 package com.upjavago.proyecto_ciclo03.controller;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,10 +15,12 @@ public class IndexController {
     private final Logger LOG = Logger.getLogger(""+IndexController.class);
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @AuthenticationPrincipal User user){
         LOG.log(Level.INFO,"index");
-        var mensaje = "Bienvenidos al sistema de gestión de Ingresos y Egresos ";
+        LOG.log(Level.INFO,"usuario : "+ user);
+        var mensaje = "Bienvenidos al sistema de gestión de ingresos y egresos ";
         model.addAttribute("mensaje", mensaje);
+        model.addAttribute("user", user);
         return "index";
     }
 }

@@ -1,6 +1,5 @@
 package com.upjavago.proyecto_ciclo03.service;
 
-import com.upjavago.proyecto_ciclo03.entity.Empresa;
 import com.upjavago.proyecto_ciclo03.entity.Usuario;
 import com.upjavago.proyecto_ciclo03.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
