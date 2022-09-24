@@ -1,8 +1,10 @@
 package com.upjavago.proyecto_ciclo03.controller;
 
 import com.upjavago.proyecto_ciclo03.entity.Empresa;
+import com.upjavago.proyecto_ciclo03.entity.Rol;
 import com.upjavago.proyecto_ciclo03.entity.Usuario;
 import com.upjavago.proyecto_ciclo03.service.IEmpresaService;
+import com.upjavago.proyecto_ciclo03.service.IRolService;
 import com.upjavago.proyecto_ciclo03.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,9 @@ public class UsuarioController {
     @Autowired
     private IEmpresaService empresaService;
 
+    @Autowired
+    private IRolService rolService;
+
     private final Logger LOG = Logger.getLogger(""+UsuarioController.class);
     private Validator validator;
 
@@ -46,6 +51,9 @@ public class UsuarioController {
         //Empresa
         List<Empresa> empresas = empresaService.buscarTodasLasEmpresas();
         modelo.addAttribute("empresas", empresas);
+        //Rol
+        List<Rol> roles = rolService.findAll();
+        modelo.addAttribute("roles", roles);
         return "usuario/modificar";
     }
 
@@ -77,6 +85,9 @@ public class UsuarioController {
         //Empresa
         List<Empresa> empresas = empresaService.buscarTodasLasEmpresas();
         modelo.addAttribute("empresas", empresas);
+        //Rol
+        List<Rol> roles = rolService.findAll();
+        modelo.addAttribute("roles", roles);
         return "usuario/modificar";
     }
 

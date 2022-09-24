@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Lista de movimientos</title>
@@ -26,8 +27,8 @@
                                     <th scope="col">Tipo de Movimiento</th>
                                     <th scope="col">Concepto</th>
                                     <th scope="col">Usuario</th>
-                                    <th scope="col">Editar</th>
-                                    <th scope="col">Eliminar</th>
+                                    <th scope="col" sec:authorize="hasRole('ROLE_ADMIN')">Editar</th>
+                                    <th scope="col" sec:authorize="hasRole('ROLE_ADMIN')">Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,10 +38,10 @@
                                     <td th:text="${movimiento.tipoMovimiento}"></td>
                                     <td th:text="${movimiento.concepto}"></td>
                                     <td th:text="${movimiento.usuario.nombre}"></td>
-                                    <td><a th:href="@{/movimientos/editar/} + ${movimiento.idMovimiento}" class="btn btn-primary">
+                                    <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/movimientos/editar/} + ${movimiento.idMovimiento}" class="btn btn-primary">
                                         <i class="fa fa-edit"></i>
                                     </a></td>
-                                    <td><a th:href="@{/movimientos/eliminar/} + ${movimiento.idMovimiento}" class="btn btn-secondary">
+                                    <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/movimientos/eliminar/} + ${movimiento.idMovimiento}" class="btn btn-secondary">
                                         <i class="fa fa-remove"></i>
                                     </a></td>
                                 </tr>
@@ -57,7 +58,7 @@
     </section>
 
     <section class="py-4 m-4">
-        <div class="container">
+        <div class="container" sec:authorize="hasRole('ROLE_ADMIN')">
             <div class="row">
                 <div class="col-md-4">
                     <a th:href="@{/movimientos/crear}" class="btn btn-primary btn-block">

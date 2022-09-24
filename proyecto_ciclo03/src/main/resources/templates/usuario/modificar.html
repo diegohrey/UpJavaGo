@@ -53,6 +53,14 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="clave">Username</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" th:field="*{username}" id="username" placeholder="Username">
+                            </div>
+                            <div class="alert alert-warning" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+                        </div>
+
+                        <div class="form-group row">
                             <label class="col-sm-2 col-form-label" for="clave">Password</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" th:field="*{clave}" id="clave" placeholder="Password">
@@ -75,13 +83,27 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label" for="rol">Rol</label>
+                            <label class="col-sm-2 col-form-label" for="tipoPerfil">Tipo Perfil</label>
                             <div class="col-sm-10">
-                                <select th:field="*{rol}" name="rol" class="custom-select" style="width:100%!important;height:100%!important;">
-                                    <option value="" selected>Seleccione tipo de Rol</option>
-                                    <option th:each="rol : ${T(com.upjavago.proyecto_ciclo03.entity.TipoRol).values()}"
-                                            th:value="${rol}"
-                                            th:text="${rol}">
+                                <select th:field="*{tipoPerfil}" name="tipoPerfil" class="custom-select" style="width:100%!important;height:100%!important;">
+                                    <option value="" selected>Seleccione tipo de Perfil</option>
+                                    <option th:each="tipoPerfil : ${T(com.upjavago.proyecto_ciclo03.entity.TipoPerfil).values()}"
+                                            th:value="${tipoPerfil}"
+                                            th:text="${tipoPerfil}">
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="alert alert-warning" th:if="${#fields.hasErrors('tipoPerfil')}" th:errors="*{tipoPerfil}"></div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="rol">Rol </label>
+                            <div class="col-sm-10">
+                                <select th:field="*{rol.idRol}" name="rol" class="custom-select" style="width:100%!important; height:100%!important; ">
+                                    <option value="0" selected>Seleccione rol</option>
+                                    <option th:each="rol : ${roles}"
+                                            th:value="${rol.idRol}"
+                                            th:text="${rol.descripcion}">
                                     </option>
                                 </select>
                             </div>
